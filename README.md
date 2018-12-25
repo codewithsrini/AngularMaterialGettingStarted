@@ -7,7 +7,7 @@ Build a simple application with sidebar navigation.
 Build a toolbar.
 And few input elements like input text, checkboxes, etc
 
-## Video
+## Video Source
 https://youtu.be/oAQmWFcAuDI
 
 ## Angular Blog
