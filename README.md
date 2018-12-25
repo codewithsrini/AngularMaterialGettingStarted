@@ -1,6 +1,20 @@
 # AngularMaterialGettingStarted
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+In this lecture we gonna look at;
+How to setup Angular Material for Angular 6.
+Include a default theme.
+Build a simple application with sidebar navigation.
+Build a toolbar.
+And few input elements like input text, checkboxes, etc
+
+## Video
+https://youtu.be/oAQmWFcAuDI
+
+## Angular Blog
+http://www.codewithsrini.com/
+
+## Related Taxonomy
+angular 6 material,angular material,angular 6 material tutorial,angular material tutorial,install angular 6 material,material tutorial,material guide, CodeWithSrini, Code With Srini, angular 6 Material, angular 7 material, angular 7 material tutorial
 
 ## Development server
 
