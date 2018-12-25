@@ -1,21 +1,75 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar id="mainToolbar" color="primary">
+  <mat-icon
+    (click)="onToolbarMenuToggle()"
+    id="toolbarMenu">subject</mat-icon>
+  My Awesome App
+  <span class="toolbar-spacer"></span>
+  <mat-icon
+    class="toolbar-icon"
+    matBadge="8"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+  >notifications</mat-icon>
+</mat-toolbar>
 
+<mat-sidenav-container
+  id="sidenavContainer"
+ fullscreen>
+  <mat-sidenav
+    mode="side"
+    #sidenav
+    id="sidenav"
+    [class.menu-open]="isMenuOpen"
+    [class.menu-close]="!isMenuOpen"
+    opened>
+    
+    <mat-list id="menus">
+      <mat-card>
+        <mat-card-header>
+          <div 
+            mat-card-avatar 
+            class="avatar"></div>
+
+          <mat-card-title>John Doe</mat-card-title>
+          <mat-card-subtitle>Internal</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list-item>
+        <button 
+        class="menu-item"
+          mat-flat-button>
+          <mat-icon>dashboard</mat-icon>
+        Dashboard</button>
+      </mat-list-item>
+
+      <mat-list-item>
+          <button 
+          class="menu-item"
+            mat-flat-button>
+            <mat-icon>work</mat-icon>
+          Project</button>
+        </mat-list-item>
+
+        <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>settings_application</mat-icon>
+            Settings</button>
+          </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content
+  [ngStyle]="{ 'margin-left.px': contentMargin }"
+  >
+    <mat-selection-list class="dash-list">
+      <h3>TO DO</h3>
+      <mat-list-option *ngFor="let todo of task">
+        {{todo}}
+      </mat-list-option>
+    </mat-selection-list> 
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <router-outlet></router-outlet>
